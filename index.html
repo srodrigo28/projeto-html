@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Desenvolvimento - Web & Mobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        // Paleta de cores baseada na imagem gerada
+                        dark: {
+                            bg: '#0F0F11',      // Fundo principal super escuro
+                            card: '#18181B',    // Fundo dos cartões
+                            lighter: '#27272A', // Elementos de fundo secundários (barras inativas)
+                            text: '#A1A1AA'     // Texto secundário
+                        },
+                        primary: {
+                            DEFAULT: '#8B5CF6', // O Roxo vibrante (Violet-500/600)
+                            hover: '#7C3AED',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Fonte moderna limpa
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilização básica para a barra de rolagem no modo escuro */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #18181B; }
+        ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3F3F46; }
+    </style>
+</head>
+<body class="bg-gray-900 font-sans p-8 min-h-screen flex items-center justify-center">
+
+    <div class="flex flex-col xl:flex-row gap-10 w-full max-w-[1800px] items-start justify-center">
+
+        <div class="w-full xl:w-[1100px] aspect-video bg-dark-bg rounded-3xl overflow-hidden shadow-2xl border border-dark-lighter p-6 flex flex-col">
+            
+            <header class="flex justify-between items-center mb-8 bg-dark-card p-3 rounded-2xl">
+                <div class="text-primary text-2xl font-bold ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                        <path fill-rule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436h.001c-3.701 2.88-8.2 5.264-13.256 5.264a.75.75 0 01-.75-.75c0-5.055 2.384-9.555 6.084-12.436zM4.75 8.25a.75.75 0 01.75-.75h2.868a.75.75 0 00.682-.455l1.667-3.333a.75.75 0 00-1.342-.671L7.91 6H5.5a2.25 2.25 0 00-2.25 2.25v12.563a.75.75 0 01-1.5 0V8.25zm5.53 2.368a.75.75 0 01.672 1.341l-3.334 1.667a.75.75 0 00-.454.682v2.868a.75.75 0 01-.75.75H3.685a.75.75 0 00-.682.455l-1.667 3.333a.75.75 0 01-1.342-.671l1.464-2.928V10.75a2.25 2.25 0 012.25-2.25h12.563a.75.75 0 000-1.5H10.28z" clip-rule="evenodd" />
+                      </svg>                      
+                </div>
+
+                <nav class="flex space-x-2 bg-dark-bg p-1 rounded-xl">
+                    <button class="px-6 py-2 text-sm font-medium text-white bg-primary rounded-lg shadow-lg shadow-primary/30">Desenvolvimento</button>
+                    <button class="px-6 py-2 text-sm font-medium text-dark-text hover:text-white hover:bg-dark-lighter rounded-lg transition">Backlog</button>
+                    <button class="px-6 py-2 text-sm font-medium text-dark-text hover:text-white hover:bg-dark-lighter rounded-lg transition">Testes</button>
+                </nav>
+
+                <div class="flex items-center mr-4">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="User" class="w-10 h-10 rounded-full border-2 border-dark-lighter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-dark-text ml-2">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </header>
+
+            <main class="flex-1 grid grid-cols-4 gap-6">
+                
+                <div class="col-span-1 flex flex-col gap-6">
+                    <div class="bg-dark-card p-5 rounded-2xl border border-dark-lighter/50">
+                        <h3 class="text-white font-semibold mb-4">Projeto de Projetts no Develolnemento</h3>
+                        <div class="w-full bg-dark-lighter rounded-full h-2 mb-4">
+                            <div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+                        </div>
+                        <button class="px-4 py-1.5 bg-dark-lighter text-dark-text text-xs font-medium rounded-lg hover:bg-primary hover:text-white transition">Concesar</button>
+                    </div>
+                     <div class="bg-dark-card p-5 rounded-2xl border border-dark-lighter/50">
+                        <h3 class="text-white font-semibold mb-4">Projeto de Requiro Comneiro</h3>
+                        <div class="w-full bg-dark-lighter rounded-full h-2 mb-4">
+                            <div class="bg-primary h-2 rounded-full" style="width: 25%"></div>
+                        </div>
+                        <button class="px-4 py-1.5 bg-dark-lighter text-dark-text text-xs font-medium rounded-lg hover:bg-primary hover:text-white transition">Concesar</button>
+                    </div>
+                </div>
+
+                <div class="col-span-2 bg-dark-card rounded-3xl p-8 border border-dark-lighter/50 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full bg-primary/5 blur-3xl pointer-events-none"></div>
+
+                    <span class="text-dark-text text-sm font-medium uppercase tracking-wider">Projeto em Destaque:</span>
+                    <h2 class="text-3xl font-bold text-white mt-2 mb-8">Sistema Financeiro</h2>
+                    
+                    <div class="mb-2">
+                        <div class="flex justify-between text-sm text-dark-text mb-2">
+                            <span>Progresso ótimo por tempo</span>
+                            <span class="text-primary font-semibold">85.000</span>
+                        </div>
+                        <div class="w-full bg-dark-lighter rounded-full h-4">
+                            <div class="bg-gradient-to-r from-primary to-primary-hover h-4 rounded-full shadow-lg shadow-primary/50" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4 mt-10 pt-8 border-t border-dark-lighter/30">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1">30</div>
+                            <div class="text-dark-text text-sm">Progresso</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="flex justify-center mb-2 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                            </div>
+                            <div class="text-dark-text text-sm">Tarefas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1">3</div>
+                            <div class="text-dark-text text-sm">Tsendas</div>
+                        </div>
+                        <div class="text-center">
+                             <div class="text-3xl font-bold text-primary mb-1">0</div>
+                            <div class="text-dark-text text-sm">Contribuições</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-1 flex flex-col gap-6">
+                     <div class="bg-dark-card p-5 rounded-2xl border border-dark-lighter/50">
+                        <h3 class="text-white font-semibold mb-4">Projeto de Contanto Financeiro</h3>
+                        <div class="w-full bg-dark-lighter rounded-full h-2 mb-4">
+                            <div class="bg-primary h-2 rounded-full" style="width: 15%"></div>
+                        </div>
+                        <button class="px-4 py-1.5 bg-dark-lighter text-dark-text text-xs font-medium rounded-lg hover:bg-primary hover:text-white transition">Conssoar</button>
+                    </div>
+                     <div class="bg-dark-card p-5 rounded-2xl border border-dark-lighter/50">
+                        <h3 class="text-white font-semibold mb-4">Projeto de Developemento</h3>
+                        <div class="w-full bg-dark-lighter rounded-full h-2 mb-4">
+                            <div class="bg-primary h-2 rounded-full" style="width: 55%"></div>
+                        </div>
+                        <button class="px-4 py-1.5 bg-dark-lighter text-dark-text text-xs font-medium rounded-lg hover:bg-primary hover:text-white transition">Conesoar</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="w-[400px] h-[800px] bg-dark-bg rounded-[3rem] border-8 border-gray-800 overflow-hidden shadow-2xl flex flex-col relative">
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-6 w-32 bg-gray-800 rounded-b-2xl z-20"></div>
+            
+            <div class="h-8 w-full bg-dark-bg shrink-0"></div>
+
+            <header class="flex items-center p-4 bg-dark-bg shrink-0 relative z-10">
+                <button class="text-white p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                      </svg>                      
+                </button>
+                <h1 class="flex-1 text-center text-white text-lg font-semibold mr-8">Desenvolvimento</h1>
+            </header>
+
+            <main class="flex-1 overflow-y-auto p-4 space-y-4">
+                
+                <div class="bg-dark-card rounded-2xl p-5 border border-dark-lighter/50">
+                    <span class="text-dark-text text-xs font-medium uppercase">Projeto em Destaque:</span>
+                    <h2 class="text-xl font-bold text-white mt-1 mb-4">Sistema Financeiro</h2>
+                    
+                    <div class="w-full bg-dark-lighter rounded-full h-3 mb-6">
+                        <div class="bg-primary h-3 rounded-full shadow-sm shadow-primary/50" style="width: 85%"></div>
+                    </div>
+
+                    <div class="flex justify-between text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-primary">13</div>
+                            <div class="text-dark-text text-xs">Progresso</div>
+                        </div>
+                         <div>
+                             <div class="flex justify-center text-primary mb-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                            </div>
+                            <div class="text-dark-text text-xs">Tarefas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-primary">0</div>
+                            <div class="text-dark-text text-xs">Colimtações</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card rounded-2xl p-4 border border-dark-lighter/50">
+                    <h3 class="text-white font-semibold mb-3">Projeto de Peturingeim</h3>
+                    <div class="w-full bg-dark-lighter rounded-full h-2 mb-3">
+                        <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-dark-text">
+                        <span>Progresso astmo por tempo</span>
+                        <span class="text-primary">12.250</span>
+                    </div>
+                </div>
+                 <div class="bg-dark-card rounded-2xl p-4 border border-dark-lighter/50">
+                    <h3 class="text-white font-semibold mb-3">Projeto de Damarido</h3>
+                    <div class="w-full bg-dark-lighter rounded-full h-2 mb-3">
+                        <div class="bg-primary h-2 rounded-full" style="width: 20%"></div>
+                    </div>
+                     <div class="flex justify-between text-xs text-dark-text">
+                        <span>Progresso anzeneiro</span>
+                        <span class="text-primary">3.760</span>
+                    </div>
+                </div>
+                 <div class="bg-dark-card rounded-2xl p-4 border border-dark-lighter/50">
+                    <h3 class="text-white font-semibold mb-3">Devetropamento</h3>
+                     <div class="w-full bg-dark-lighter rounded-full h-2 mb-3">
+                        <div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+                    </div>
+                </div>
+
+            </main>
+
+            <nav class="bg-dark-card p-2 border-t border-dark-lighter/50 flex justify-around items-center shrink-0 pb-6">
+                <button class="flex flex-col items-center text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2z" /></svg>
+                    <span class="text-[10px] mt-1 font-medium">Projetos</span>
+                </button>
+                <button class="flex flex-col items-center text-dark-text hover:text-white">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                    <span class="text-[10px] mt-1">Tarefas</span>
+                </button>
+                <button class="flex flex-col items-center text-dark-text hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    <span class="text-[10px] mt-1">Configurações</span>
+                </button>
+            </nav>
+        </div>
+
+    </div>
+</body>
+</html>
