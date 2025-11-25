@@ -1,6 +1,6 @@
 # 🚀 Dashboard de Desenvolvimento - Web & Mobile
 
-Bem-vindo ao **DevDash**, um dashboard interativo e responsivo projetado para gerenciamento de projetos de desenvolvimento. Este projeto foi transformado de um layout estático para uma aplicação web dinâmica com autenticação e design premium.
+Bem-vindo ao **DevDash+**, um dashboard interativo e responsivo projetado para gerenciamento de projetos de desenvolvimento. Este projeto foi transformado de um layout estático para uma aplicação web dinâmica com autenticação e design premium.
 
 ![Dashboard Preview](web.png)
 
