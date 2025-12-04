@@ -1,19 +1,168 @@
-<html>
-  <head>
-    <title>Login</title>
-  </head>
-  <body>
-    <h1>Login</h1>
-    <form>
-      <div>
-        <label>E-mail </label>
-          <input type="text" />
-      </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Cadastro Animado</title>
+    <!-- Importando TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonte Inter para um visual moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Utilitários para a animação do Modal */
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content-hidden {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+        .modal-content-visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 h-screen w-full flex items-center justify-center p-4">
 
-      <div>
-        <label>Senha</label>
-        <input type="password" />
-      </div>
-    </form>
-  </body>
+    <!-- =========================== -->
+    <!-- TELA DE LOGIN (Card)        -->
+    <!-- =========================== -->
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden">
+        <div class="p-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-2">Bem-vindo</h2>
+            <p class="text-gray-500 text-center mb-8">Faça login na sua conta</p>
+
+            <form onsubmit="event.preventDefault(); alert('Login efetuado!');">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="email">Email</label>
+                    <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200" type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="password">Senha</label>
+                    <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200" type="password" id="password" placeholder="********" required>
+                </div>
+                
+                <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 rounded-lg transition duration-300 transform hover:-translate-y-0.5 shadow-lg">
+                    Entrar
+                </button>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-600">
+                    Não tem uma conta? 
+                    <a href="#" id="btn-open-register" class="text-indigo-600 font-bold hover:underline">Cadastre-se</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================== -->
+    <!-- MODAL DE CADASTRO (Overlay) -->
+    <!-- =========================== -->
+    <!-- O container externo controla o fundo escuro (overlay) -->
+    <div id="register-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm modal-hidden transition-opacity duration-300 ease-out">
+        
+        <!-- Conteúdo do Modal -->
+        <div id="modal-card" class="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 relative modal-content-hidden transition-all duration-300 ease-out">
+            
+            <!-- Botão Fechar (X) -->
+            <button id="btn-close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Criar nova conta</h2>
+
+            <form onsubmit="event.preventDefault(); alert('Cadastro realizado!');">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-semibold mb-1">Nome Completo</label>
+                    <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-semibold mb-1">Email</label>
+                    <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" type="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-semibold mb-1">Senha</label>
+                        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" type="password" placeholder="******" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-semibold mb-1">Confirmar</label>
+                        <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" type="password" placeholder="******" required>
+                    </div>
+                </div>
+
+                <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2.5 rounded-lg transition duration-300 shadow-md">
+                    Registrar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================== -->
+    <!-- JAVASCRIPT                  -->
+    <!-- =========================== -->
+    <script>
+        // Elementos do DOM
+        const btnOpen = document.getElementById('btn-open-register');
+        const btnClose = document.getElementById('btn-close-modal');
+        const modalOverlay = document.getElementById('register-modal');
+        const modalCard = document.getElementById('modal-card');
+
+        // Função para abrir o modal
+        function openModal(e) {
+            e.preventDefault(); // Previne o comportamento padrão do link
+            
+            // Remove classes de ocultação e adiciona as de visibilidade
+            modalOverlay.classList.remove('modal-hidden');
+            modalOverlay.classList.add('modal-visible');
+
+            // Um pequeno timeout garante que a transição CSS ocorra suavemente
+            setTimeout(() => {
+                modalCard.classList.remove('modal-content-hidden');
+                modalCard.classList.add('modal-content-visible');
+            }, 10);
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            // Animação de saída do card (diminui e desaparece)
+            modalCard.classList.remove('modal-content-visible');
+            modalCard.classList.add('modal-content-hidden');
+
+            // Animação de saída do overlay (fade out)
+            modalOverlay.classList.remove('modal-visible');
+            modalOverlay.classList.add('modal-hidden');
+        }
+
+        // Event Listeners
+        btnOpen.addEventListener('click', openModal);
+        btnClose.addEventListener('click', closeModal);
+
+        // Fechar ao clicar fora do card (no overlay escuro)
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Fechar com a tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('modal-visible')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
 </html>
